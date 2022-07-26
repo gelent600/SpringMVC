@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>
+        My book shelf
+    </title>
+    <meta charset="UTF-8">
+    <style>
+        #root_container{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+<div id ="root_container">
+    <table>
+        <tr>
+            <td>
+                <input type="text" placeholder="author">
+            </td>
+            <td>
+                <input type="text" placeholder="book title">
+            </td>
+            <td>
+                <input type="text" placeholder="size">
+            </td>
+            <td>
+                <input type="submit" >
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <input type="text" placeholder="id number">
+            </td>
+            <td>
+                <input type="submit " value="remove">
+            </td>
+        </tr>
+    </table>
+
+    <table id="books">
+        <tr>
+            <th>id</th>
+            <th>author</th>
+            <th>title</th>
+            <th>size</th>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
