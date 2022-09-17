@@ -1,13 +1,14 @@
 package org.example.web.dto;
 
-import org.springframework.context.annotation.Bean;
 
+import javax.validation.constraints.Digits;
 import java.util.Objects;
 
 public class Book {
     private Integer id;
     private String author;
     private String title;
+    @Digits( integer = 4,fraction = 0)
     private Integer size;
 
 

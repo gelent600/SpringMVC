@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>
@@ -40,23 +41,29 @@
                 <td>
                     <input type="text" placeholder="size" th:field="*{size}">
                 </td>
+                <td th:if="${#fields.hasErrors()}">
+                    <p>Field must be digits and less than 4 symbols</p>
+                </td>
                 <td>
                     <input type="submit" value="save">
                 </td>
             </tr>
         </table>
     </form>
-    <form method="post" th:action="@{/books/remove}">
-    <table>
-        <tr>
-            <td>
-                <input type="text" placeholder="id number" th:name="bookIdToRemove">
-            </td>
-            <td>
-                <input type="submit" value="remove">
-            </td>
-        </tr>
-    </table>
+    <form method="post" th:action="@{/books/remove}" th:object="${bookIdToRemove}">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="id number" th:field="*{id}">
+                </td>
+                <td>
+                    <input type="submit" value="remove">
+                </td>
+                <td th:if="${#fields.hasErrors()}">
+                    <p>Wrong id or not found</p>
+                </td>
+            </tr>
+        </table>
     </form>
     <form method="post" th:action="@{/books/removeByRegex}">
         <table>

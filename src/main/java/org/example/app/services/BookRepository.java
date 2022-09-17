@@ -27,7 +27,7 @@ public class BookRepository<T> implements ProjectRepository<Book> {
     }
 
     @Override
-    public boolean removeItemById(Integer bookIdToRemove) {
+    public boolean removeItemById(String bookIdToRemove) {
         for (Book book : retriveAll()) {
             if (book.getId().equals(bookIdToRemove)) {
                 logger.info("remove book complited: " + book);
